@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #faf7f2;
+  --foreground: #1f2937;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --gold: #c8a96a;
+  --emerald: #2f855a;
+  --teal: #234e52;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #faf7f2;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+.handwriting-kalam {
+  font-family: var(--font-kalam);
+}
+
+.handwriting-caveat {
+  font-family: var(--font-caveat);
+}
+
+.handwriting-dancing {
+  font-family: var(--font-dancing-script);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-playfair);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.gold-gradient {
+  background: linear-gradient(
+    90deg,
+    #d9bb7a,
+    #f3deaa,
+    #d9bb7a
+  );
+}
+
+.fade-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.letter-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 169, 106, 0.45) transparent;
+}
+
+/* Chrome, Edge, Android WebView */
+.letter-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.letter-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.letter-scroll::-webkit-scrollbar-thumb {
+  background: rgba(200, 169, 106, 0.45);
+  border-radius: 999px;
+}
+
+.letter-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 169, 106, 0.65);
 }
