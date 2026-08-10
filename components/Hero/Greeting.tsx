@@ -29,7 +29,10 @@ export default function Greeting() {
   }}
   className="mt-10 text-md uppercase tracking-[0.45em] text-slate-500"
 >
-  Assalāmu 'Alaikum
+  Assalāmu 'Alaikum 
+  <br></br>
+  Wa' Rahmatullahi 
+  <br></br>Wa' Barakatuh
 </motion.p>
 
         </div>
