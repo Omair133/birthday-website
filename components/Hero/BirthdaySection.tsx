@@ -114,6 +114,29 @@ export default function BirthdaySection({
                 >
                     {name}
                 </motion.h2>
+                <motion.div
+
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={
+                        active
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 0, y: 60 }
+                    }
+                    transition={active ? {
+                        delay: 2.2,
+                        duration: 2,
+                        ease: [0.22, 1, 0.36, 1],
+                    } : {
+                        duration: 0
+                    }} className="mt-15">
+                    <div className="mt-8 my-4 flex justify-center">
+                        <img
+                            src="/images/qubyflower.webp"
+                            alt="Celebration"
+                            className="h-32 w-32 object-contain"
+                        />
+                    </div>
+                </motion.div>
 
             </div>
             <ScrollIndicator />

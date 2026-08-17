@@ -24,7 +24,7 @@ export default function LetterUnlock({
     const [showLetter, setShowLetter] = useState(false);
 
     const handleContinue = () => {
-        if (date === "2025-07-13" || date === "2026-08-10") {
+        if (date === "2025-07-13" || date === "2026-08-17") {
             setError(false);
             setQuestionTwo(true);
         } else {
@@ -91,11 +91,24 @@ export default function LetterUnlock({
                                         duration: 0,
                                     }
                             }
-                            className="font-serif text-3xl text-slate-800"
+                            className="font-serif text-2xl text-slate-800"
                         >
-                            One last thing...
-                            <br />
-                            Answer 2 questions to reveal a special letter 😏
+                            I need to verify if its you.
+                            <div className="mt1 flex justify-center">
+                                <img
+                                    src="/images/qubyknife.gif"
+                                    alt="Celebration"
+                                    className="h-25 w-25 object-contain"
+                                />
+                            </div>
+                            Answer 2 questions to reveal a special letter.
+                            <div className="flex justify-center">
+    <img
+        src="/images/smirk.webp"
+        alt="Celebration"
+        className="h-25 w-25 object-contain"
+    />
+</div>
                         </motion.h2>
                     )}
 
@@ -161,7 +174,7 @@ export default function LetterUnlock({
                                     duration: 0,
                                 }
                         }
-                        className="mt-8"
+                        className="mt-1"
                     >
 
                         {!questionTwo ? (
@@ -173,8 +186,8 @@ export default function LetterUnlock({
         border
         border-[#d8c49a]/40
         bg-[#fffaf0]/75
-        px-6
-        py-5
+        px-4
+        py-3
         text-center
         font-serif
         text-lg
@@ -205,7 +218,7 @@ export default function LetterUnlock({
                   px-5
                   py-3
                   text-center
-                  text-lg
+                  text-md
                   text-slate-700
                   outline-none
                   transition
@@ -283,7 +296,7 @@ export default function LetterUnlock({
                                             setAnimal(e.target.value);
                                             setQuestionTwoError(false);
                                         }}
-                                        placeholder="Your answer"
+                                        placeholder="Type your answer"
                                         autoComplete="off"
                                         className="
                 w-full

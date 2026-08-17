@@ -10,6 +10,7 @@ import BirthDaySection from "@/components/Hero/BirthdaySection"
 import DuaSection from "@/components/Hero/DuaSection";
 import FutureSection from "@/components/Hero/FutureSection";
 import BackgroundMusic from "@/components/Hero/BackgroundMusic";
+import ScratchCardSection from "@/components/Hero/ScratchCardSection";
 
 import { useState } from "react";
 import LetterUnlock from "@/components/Hero/LetterUnlock";
@@ -57,8 +58,13 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <ScratchCardSection active={activeSection === 6} />
+        </div>
+
+
+        <div className="section">
           <LetterUnlock
-            active={activeSection === 6}
+            active={activeSection === 7}
           />
         </div>
 
