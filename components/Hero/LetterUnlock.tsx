@@ -103,7 +103,7 @@ export default function LetterUnlock({
                                 className="font-serif text-2xl text-slate-800"
                             >
                 
-                                There is a letter specially written for you.
+                                There is a special letter written just for you.
                                 <div className="flex justify-center">
                                     <img
                                         src="/images/smirk.webp"
@@ -111,7 +111,7 @@ export default function LetterUnlock({
                                         className="h-32 w-32 object-contain"
                                     />
                                 </div>
-                                But I need to verify if its you.
+                                But, first I need to some verification.
                                 <div className="mt1 flex justify-center">
                                     <img
                                         src="/images/qubyknife.gif"
