@@ -37,8 +37,8 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Birthday",
-  description: "A birthday journey",
+  title: "Azmina's Birthday ✨",
+  description: "A little something special",
 };
 
 export default function RootLayout({
