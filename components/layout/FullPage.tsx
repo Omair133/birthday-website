@@ -50,7 +50,7 @@ export default function FullPage({
         scrollOverflow: false,
 
         // Let the letter handle its own touch scrolling
-        normalScrollElements: ".letter-scroll",
+        normalScrollElements: ".letter-scroll, .scratch-card",
 
         afterLoad: (_, destination) => {
           onSectionChangeRef.current?.(destination.index);

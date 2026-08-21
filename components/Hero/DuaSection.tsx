@@ -85,6 +85,29 @@ export default function DuaSection({ active }: DuaSectionProps) {
                 >
                     Āmīn.
                 </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={
+                        active
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 0, y: 30 }
+                    }
+                    transition={active ? {
+                        delay: 6,
+                        duration: 1,
+                        ease: [0.22, 1, 0.36, 1],
+                    } : {
+                        duration: 0
+                    }}
+                >
+                    <div className="mr-7 flex justify-center">
+                        <img
+                            src="/images/qubypray.gif"
+                            alt="Celebration"
+                            className="h-40 w-40 object-contain"
+                        />
+                    </div>
+                </motion.div>
             </div>
             <ScrollIndicator />
         </div>

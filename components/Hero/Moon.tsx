@@ -8,7 +8,7 @@ export default function Moon() {
       initial={{
         opacity: 0,
         scale: 0.85,
-        y: 15,
+        y: 55,
       }}
       animate={{
         opacity: 1,
@@ -22,18 +22,21 @@ export default function Moon() {
     >
       <motion.div
         animate={{
-          y: [0, -20, 0],
-          rotate: [-15, 15, -15],
+          y: [0, -30, 0],
+          // rotate: [-15, 15, -15],
         }}
         transition={{
           duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="relative h-20 w-20"
+        className="relative"
       >
-        <div className="absolute inset-0 rounded-full bg-[#F7E7A9] shadow-[0_0_80px_rgba(248,230,160,0.55)]" />
-        <div className="absolute right-0 top-0 h-16 w-16 rounded-full bg-[#f8f2dc]" />
+        <img
+            src="/images/smile.webp"
+            alt="Smile"
+            className="h-32 w-32"
+          />
       </motion.div>
     </motion.div>
   );

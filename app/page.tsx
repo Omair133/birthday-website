@@ -9,6 +9,8 @@ import Phase2 from "@/components/Hero/Phase2";
 import BirthDaySection from "@/components/Hero/BirthdaySection"
 import DuaSection from "@/components/Hero/DuaSection";
 import FutureSection from "@/components/Hero/FutureSection";
+import BackgroundMusic from "@/components/Hero/BackgroundMusic";
+import ScratchCardSection from "@/components/Hero/ScratchCardSection";
 
 import { useState } from "react";
 import LetterUnlock from "@/components/Hero/LetterUnlock";
@@ -20,7 +22,7 @@ export default function Home() {
   return (
     <>
       <AmbientBackground />
-
+      <BackgroundMusic />
       <FullPage
         onSectionChange={(index) => setActiveSection(index)}
       >
@@ -28,7 +30,7 @@ export default function Home() {
           <Greeting />
         </div>
 
-        {/* <div className="section">
+        <div className="section">
           <Phase1 active={activeSection === 1} />
         </div>
 
@@ -53,19 +55,19 @@ export default function Home() {
           <FutureSection
             active={activeSection === 5}
           />
-        </div> */}
+        </div>
+
+        <div className="section">
+          <ScratchCardSection active={activeSection === 6} />
+        </div>
+
 
         <div className="section">
           <LetterUnlock
-            active={activeSection === 1}
+            active={activeSection === 7}
           />
         </div>
 
-        <div className="section">
-          <FutureSection
-            active={activeSection === 2}
-          />
-        </div>
       </FullPage>
     </>
   );
