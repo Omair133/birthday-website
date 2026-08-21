@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
+import Letter from "./Letter"
 
 interface LetterUnlockProps {
     active: boolean;
@@ -22,9 +23,14 @@ export default function LetterUnlock({
 
     const [envelopeOpen, setEnvelopeOpen] = useState(false);
     const [showLetter, setShowLetter] = useState(false);
+    const [proceed, setProceed] = useState(false);
+
+    const handleProceed = () => {
+        setProceed(true);
+    };
 
     const handleContinue = () => {
-        if (date === "2025-07-13" || date === "2026-08-17") {
+        if (date === "2025-07-13") {
             setError(false);
             setQuestionTwo(true);
         } else {
@@ -65,8 +71,8 @@ export default function LetterUnlock({
 
                 {/* Heading */}
                 <AnimatePresence>
-                    {!unlocked && (
-                        <motion.h2
+                    {!unlocked && !proceed && (
+                        <motion.div
                             initial={{ opacity: 0, y: 25 }}
                             animate={
                                 active
@@ -91,25 +97,50 @@ export default function LetterUnlock({
                                         duration: 0,
                                     }
                             }
-                            className="font-serif text-2xl text-slate-800"
                         >
-                            I need to verify if its you.
-                            <div className="mt1 flex justify-center">
-                                <img
-                                    src="/images/qubyknife.gif"
-                                    alt="Celebration"
-                                    className="h-25 w-25 object-contain"
-                                />
-                            </div>
-                            Answer 2 questions to reveal a special letter.
-                            <div className="flex justify-center">
-    <img
-        src="/images/smirk.webp"
-        alt="Celebration"
-        className="h-25 w-25 object-contain"
-    />
-</div>
-                        </motion.h2>
+                            <motion.h2
+
+                                className="font-serif text-2xl text-slate-800"
+                            >
+                
+                                There is a letter specially written for you.
+                                <div className="flex justify-center">
+                                    <img
+                                        src="/images/smirk.webp"
+                                        alt="Celebration"
+                                        className="h-32 w-32 object-contain"
+                                    />
+                                </div>
+                                But I need to verify if its you.
+                                <div className="mt1 flex justify-center">
+                                    <img
+                                        src="/images/qubyknife.gif"
+                                        alt="Celebration"
+                                        className="h-32 w-32 object-contain"
+                                    />
+                                </div>
+                                Answer 2 questions to reveal the letter.
+                                
+                            </motion.h2>
+                            <motion.button
+                                whileTap={{ scale: 0.96 }}
+                                onClick={handleProceed}
+                                className="
+                mt-8
+                rounded-full
+                bg-[var(--gold)]
+                px-8
+                py-3
+                font-medium
+                text-white
+                transition
+                disabled:cursor-not-allowed
+                disabled:opacity-40
+              "
+                            >
+                                Continue
+                            </motion.button>
+                        </motion.div>
                     )}
 
                     {unlocked && !showLetter && (
@@ -150,13 +181,20 @@ export default function LetterUnlock({
                                 />
                             </div>
 
-                            Tap the envelope to view the special letter 🥹
+                            Tap the envelope to view the special letter.
+                            <div className="flex justify-center">
+                                <img
+                                    src="/images/qubyclap.gif"
+                                    alt="Celebration"
+                                    className="h-28 w-28 object-contain"
+                                />
+                            </div>
                         </motion.h2>
                     )}
                 </AnimatePresence>
 
                 {/* Question */}
-                {!unlocked && (
+                {!unlocked && proceed && (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={
@@ -176,10 +214,18 @@ export default function LetterUnlock({
                         }
                         className="mt-1"
                     >
+                        <div className="flex justify-center">
+                            <img
+                                src="/images/qubychair.gif"
+                                alt="Celebration"
+                                className="h-32 w-32 object-contain"
+                            />
+                        </div>
 
                         {!questionTwo ? (
                             <>
                                 <p className="
+                                mt-8
                                 mx-auto
         max-w-md
         rounded-2xl
@@ -252,18 +298,26 @@ export default function LetterUnlock({
 
                                 {/* Error */}
                                 {error && (
-                                    <motion.p
+                                    <motion.div
                                         initial={{ opacity: 0, y: 5 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         className="mt-5 text-2xl text-slate-900"
                                     >
-                                        Hmm... that's incorrect. 😡
-                                    </motion.p>
+                                        Hmm... that's incorrect.
+                                        <div className="flex justify-center">
+                                            <img
+                                                src="/images/qubyangry.gif"
+                                                alt="Celebration"
+                                                className="h-28 w-28 object-contain"
+                                            />
+                                        </div>
+                                    </motion.div>
                                 )}
                             </>
                         ) : (
                             <>
                                 <p className="
+                                mt-8
                                 mx-auto
         max-w-md
         rounded-2xl
@@ -281,7 +335,7 @@ export default function LetterUnlock({
         backdrop-blur-sm
         handwriting-kalam
                                 ">
-                                    Q2. In our conversation on
+                                    Q2. Check our conversation on
 
                                     22nd August, 2025.
 
@@ -340,13 +394,20 @@ export default function LetterUnlock({
                                 </motion.button>
 
                                 {questionTwoError && (
-                                    <motion.p
+                                    <motion.div
                                         initial={{ opacity: 0, y: 5 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         className="mt-5 text-2xl text-slate-900"
                                     >
-                                        Hmm... that's incorrect. 😡
-                                    </motion.p>
+                                        Hmm... that's incorrect.
+                                        <div className="flex justify-center">
+                                            <img
+                                                src="/images/qubyangry.gif"
+                                                alt="Celebration"
+                                                className="h-28 w-28 object-contain"
+                                            />
+                                        </div>
+                                    </motion.div>
                                 )}
                             </>
                         )}
@@ -527,25 +588,16 @@ bg-[radial-gradient(rgba(120,90,40,0.035)_0.6px,transparent_0.6px)]
         max-w-full
         space-y-7
         handwriting-kalam
-text-[18px]
-leading-[1.5rem]
+text-[15px]
+leading-[1.4rem]
 tracking-[0.02em]
         text-[#4f4a42]
         whitespace-normal
         break-words
     "
                                             >
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere imperdiet tristique. Proin non felis accumsan, laoreet orci non, ultricies erat. Mauris vitae massa ut velit aliquet mattis in vel dolor. Integer in massa a lorem mattis mattis. Nunc sed lorem mauris. Suspendisse tellus leo, faucibus non dolor vitae, porta pretium quam. Donec gravida, risus a elementum egestas, sem nisl fringilla lorem, vel dictum ante lectus quis justo. Aliquam tempus, libero id mattis consequat, nisl lacus viverra eros, nec vulputate ipsum odio eget tortor. Quisque consequat nisi quis auctor pellentesque. Phasellus in elementum sem, vitae pellentesque dolor. Curabitur eleifend euismod ipsum, in porta lectus blandit in.
-                                                </p>
+                                                <Letter></Letter>
 
-                                                <p>
-                                                    Vestibulum fringilla ut libero et mattis. Nulla aliquam ante tortor, quis varius justo lacinia at. Integer fringilla mattis nibh sit amet mattis. Duis sollicitudin ante in fringilla semper. Nulla laoreet tortor eget lectus malesuada ullamcorper eu auctor tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui mauris, scelerisque a tempus consequat, sollicitudin quis odio. Suspendisse a tincidunt massa. Nunc ultricies magna ut blandit ultricies.
-                                                </p>
-
-                                                <p>
-                                                    Etiam sagittis blandit augue non vestibulum. Praesent lobortis ligula eu arcu feugiat congue. Ut odio nisi, feugiat a consectetur id, blandit id diam. In ac luctus libero. Phasellus sit amet felis nec dolor bibendum tempus suscipit consequat arcu. Aliquam dolor nulla, auctor at gravida tincidunt, dapibus ac massa. Vivamus pretium hendrerit elit in gravida. Aliquam sodales ac diam et hendrerit. Nullam ullamcorper lorem a arcu venenatis elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean vel nibh egestas, pretium neque eget, vestibulum urna. Nullam a facilisis risus. Morbi blandit dolor metus, in finibus nibh ultricies quis. Quisque dictum, mauris eu finibus aliquam, urna tellus ultrices nisi, vitae ullamcorper metus metus a diam.
-                                                </p>
                                             </div>
 
 

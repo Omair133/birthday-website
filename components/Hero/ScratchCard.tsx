@@ -238,7 +238,7 @@ export default function ScratchCard({
                 <div>
                     <p>
                         Almost a year of conversations, questions,
-                        getting to know each other, and learning
+                        getting to understand each other, and learning
                         along the way.
                     </p>
 
