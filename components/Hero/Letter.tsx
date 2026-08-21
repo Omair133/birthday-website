@@ -55,22 +55,22 @@ export default function Letter() {
             </ul>
 
             <p>
-                I hope our marriage has a lot of conversations, not just the good ones but difficult ones as well. Tell me when I am wrong. Tell me if I ever hurt you. Tell me something I do which makes you uncomfortable. Tell me when you need something from me. But please, never quietly carry things just to avoid discussions. I would rather have an uncomfortable conversation with you than have a comfortable silence that slowly creates distance.
+                I hope our marriage has a lot of conversations, not just the good ones but difficult ones as well. Tell me when I am wrong. Tell me if I ever hurt you. Tell me something I do which makes you uncomfortable. Tell me when you need something from me. But please, never quietly carry things just to avoid discussions. I would rather have an uncomfortable conversation with you than have a comfortable silence that slowly creates distance. 🥲
             </p>
 
             <p>
-                Because one thing I have realised during this past year is that we can't expect each other to understand things that we never communicate. None of us can read minds. 😄 So I hope our marriage has conversations. A lot of them. The serious ones. The stupid ones. The uncomfortable ones. The random ones. The conversations that somehow begin with one topic and end somewhere completely different.
+                Because one thing I have realised during this past year is that we can't expect each other to understand things that we never communicate. None of us can read minds. 😄 So I hope our marriage has conversations. A lot of them. The serious ones. The stupid ones. The uncomfortable ones. The random ones. The conversations that somehow begin with one topic and end somewhere completely different. 😂
             </p>
 
             <p>
-                At the end of everything, I don't just want to have a happy marriage. I want us to have a marriage that has barakah in it. A marriage where pleasing Allah is the center of our lives. A marriage where we offer our Salah together. Where we make dua for each other. Where we help each other grow in deen.
+                At the end of everything, I don't just want to have a happy marriage. I want us to have a marriage that has barakah in it. A marriage where pleasing Allah is the center of our lives. A marriage where we offer our Salah together. Where we make dua for each other. Where we help each other grow in deen. 😌
             </p>
 
             <p>
-                May Allah increase you in iman. May He give you good health, peace of mind, and barakah in everything you do. May He protect you from the things you fear. May He keep your heart soft and your faith strong. And if Allah has written our marriage together, then I pray He makes us good for one another.
+                May Allah increase you in iman. May He give you good health, peace of mind, and barakah in everything you do. May He protect you from the things you fear. May He keep your heart soft and your faith strong. And if Allah has written our marriage together, then I pray He makes us good for one another. 🤍
             </p>
             <p>
-                I hope you always know that behind the overthinking, the questions, the expectations, the occasional arguments, and all the things we are still figuring out....there is someone who genuinely wants this to work. Someone who is looking forward to knowing you beyond the conversations we have had so far. 
+                I hope you always know that behind the overthinking, the questions, the expectations, the occasional arguments, and all the things that we will figure our together....there is someone who genuinely wants this to work. Someone who is looking forward to knowing you beyond the conversations we have had so far. 
             </p>
 
             <p>
@@ -84,7 +84,7 @@ export default function Letter() {
                 <p>You are always going to be a part of my dua. ❤️
             </p>
             <p>
-                ~ Omair
+                ~ Omair 😉
             </p>
         </>
     );
