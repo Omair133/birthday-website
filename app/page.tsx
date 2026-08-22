@@ -14,6 +14,7 @@ import ScratchCardSection from "@/components/Hero/ScratchCardSection";
 
 import { useState } from "react";
 import LetterUnlock from "@/components/Hero/LetterUnlock";
+import Unavailable from "@/components/Hero/Unavailable";
 
 export default function Home() {
 
@@ -22,11 +23,11 @@ export default function Home() {
   return (
     <>
       <AmbientBackground />
-      <BackgroundMusic />
+      {/* <BackgroundMusic /> */}
       <FullPage
         onSectionChange={(index) => setActiveSection(index)}
       >
-        <div className="section">
+        {/* <div className="section">
           <Greeting />
         </div>
 
@@ -65,6 +66,12 @@ export default function Home() {
         <div className="section">
           <LetterUnlock
             active={activeSection === 7}
+          />
+        </div> */}
+
+        <div className="section">
+          <Unavailable 
+            active={activeSection === 0}
           />
         </div>
 
