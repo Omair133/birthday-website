@@ -9,7 +9,7 @@ interface UnavailableProps {
 export default function Unavailable({ active }: UnavailableProps) {
     return (
         <div className="flex flex-col items-center text-center">
-            <motion.h1
+            {/* <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={
 
@@ -44,7 +44,7 @@ export default function Unavailable({ active }: UnavailableProps) {
                         className="h-32 w-32 object-contain"
                     />
                 </div>
-            </motion.div>
+            </motion.div> */}
 
         </div>
     );

@@ -37,7 +37,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Azmina",
+  title: "...",
   description: "",
 };
 
