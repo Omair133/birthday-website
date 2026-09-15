@@ -6,25 +6,27 @@ import { motion } from "framer-motion";
 const targetDate = new Date("2026-12-24T00:00:00+05:30").getTime();
 
 export default function Countdown() {
-  const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
+  const [mounted, setMounted] = useState(false);
+const [timeLeft, setTimeLeft] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(targetDate - Date.now());
-    }, 1000);
+useEffect(() => {
+  setMounted(true);
 
-    return () => clearInterval(timer);
-  }, []);
+  const updateCountdown = () => {
+    setTimeLeft(targetDate - Date.now());
+  };
 
-  if (timeLeft <= 0) {
-    return (
-      <div className="text-center">
-        <p className="text-md uppercase tracking-[0.5em] text-slate-500">
-          The day has arrived
-        </p>
-      </div>
-    );
-  }
+  updateCountdown();
+
+  const timer = setInterval(updateCountdown, 1000);
+
+  return () => clearInterval(timer);
+}, []);
+
+if (!mounted) {
+  return null;
+}
+
 
   const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
@@ -36,60 +38,87 @@ export default function Countdown() {
   const seconds = Math.floor((timeLeft / 1000) % 60);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
-      {/* Small heading */}
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="mb-8 text-[18px] uppercase tracking-[0.5em] text-slate-500"
+      {/* ========================= */}
+      {/* Background Video */}
+      {/* ========================= */}
+
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
       >
-        Until the day
-      </motion.p>
+        <source src="/images/Swans2.mp4" type="video/mp4" />
+      </video>
 
-      {/* Countdown */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="
-          relative
-          rounded-3xl
-          border border-white/40
-          bg-white/20
-          px-6 py-7
-          shadow-[0_20px_60px_rgba(120,100,70,0.08)]
-          backdrop-blur-xl
-        "
-      >
-        {/* Soft glow */}
-        <div className="absolute inset-0 -z-10 rounded-3xl bg-amber-200/10 blur-2xl" />
+      {/* ========================= */}
+      {/* Video Overlay */}
+      {/* ========================= */}
 
-        <div className="flex items-center gap-4 sm:gap-7">
-          <TimeUnit value={days} label="Days" />
+      <div className="absolute inset-0 bg-white/20" />
 
-          <Separator />
+      {/* ========================= */}
+      {/* Existing Countdown */}
+      {/* ========================= */}
 
-          <TimeUnit value={hours} label="Hours" />
+      <div className="relative z-10 flex flex-col items-center">
 
-          <Separator />
+        {/* Small heading */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="mb-8 text-[18px] uppercase tracking-[0.5em] text-slate-500"
+        >
+          Until the day
+        </motion.p>
 
-          <TimeUnit value={minutes} label="Minutes" />
+        {/* Countdown */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="
+            relative
+            rounded-3xl
+            border border-white/40
+            bg-white/20
+            px-6 py-7
+            shadow-[0_20px_60px_rgba(120,100,70,0.08)]
+            backdrop-blur-xl
+          "
+        >
+          {/* Soft glow */}
+          <div className="absolute inset-0 -z-10 rounded-3xl bg-amber-200/10 blur-2xl" />
 
-          <Separator />
+          <div className="flex items-center gap-4 sm:gap-7">
+            <TimeUnit value={days} label="Days" />
 
-          <TimeUnit value={seconds} label="Seconds" />
-        </div>
-      </motion.div>
+            <Separator />
 
-      {/* Bottom line */}
-      <motion.div
-        initial={{ width: 0, opacity: 0 }}
-        animate={{ width: 80, opacity: 1 }}
-        transition={{ delay: 0.8, duration: 1 }}
-        className="mt-12 h-px bg-slate-400/30"
-      />
+            <TimeUnit value={hours} label="Hours" />
+
+            <Separator />
+
+            <TimeUnit value={minutes} label="Minutes" />
+
+            <Separator />
+
+            <TimeUnit value={seconds} label="Seconds" />
+          </div>
+        </motion.div>
+
+        {/* Bottom line */}
+        <motion.div
+          initial={{ width: 0, opacity: 0 }}
+          animate={{ width: 80, opacity: 1 }}
+          transition={{ delay: 0.8, duration: 1 }}
+          className="mt-12 h-px bg-slate-400/30"
+        />
+      </div>
     </div>
   );
 }
