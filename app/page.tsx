@@ -15,6 +15,7 @@ import ScratchCardSection from "@/components/Hero/ScratchCardSection";
 import { useState } from "react";
 import LetterUnlock from "@/components/Hero/LetterUnlock";
 import Unavailable from "@/components/Hero/Unavailable";
+import Countdown from "@/components/Hero/Countdown";
 
 export default function Home() {
 
@@ -70,8 +71,8 @@ export default function Home() {
         </div> */}
 
         <div className="section">
-          <Unavailable 
-            active={activeSection === 0}
+          <Countdown 
+            
           />
         </div>
 
