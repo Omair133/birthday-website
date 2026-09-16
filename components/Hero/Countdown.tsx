@@ -71,9 +71,9 @@ if (!mounted) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-8 text-[18px] uppercase tracking-[0.5em] text-slate-500"
+          className="mb-8 text-[18px] uppercase tracking-[0.2em] text-slate-500"
         >
-          Until the day
+          The big day is coming!
         </motion.p>
 
         {/* Countdown */}
